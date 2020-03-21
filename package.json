@@ -1,0 +1,22 @@
+{
+  "name": "vs-userapi",
+  "version": "1.0.0",
+  "description": "REST API to get usernames for the exam in distributed systems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobias-schwarz/vs-userapi.git"
+  },
+  "dependencies": {
+    "express": "*"
+  },
+  "author": "Tobias Schwarz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tobias-schwarz/vs-userapi/issues"
+  },
+  "homepage": "https://github.com/tobias-schwarz/vs-userapi#readme"
+}

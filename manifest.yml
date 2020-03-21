@@ -1,0 +1,4 @@
+applications:
+- name: VS-UserManagement-V1
+  random-route: false
+  memory: 256M
