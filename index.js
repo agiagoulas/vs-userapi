@@ -28,6 +28,11 @@ const users = [
     },
     {
         id: 2,
+        user: "Holzweißig",
+        role: "admin"
+    },
+    {
+        id: 2,
         user: "Schwarz",
         role: "user"
     }
