@@ -36,7 +36,8 @@ const users = [
 ];
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'null');
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Vary', 'Origin');
     next();
 });
 
