@@ -33,6 +33,11 @@ const users = [
     }
 ];
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'null');
+    next();
+});
+
 // Return all users
 app.get('/api/v1/user', function(req, res, next) {
     res.json(users);
