@@ -11,6 +11,8 @@ app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(bodyParser.json());
 app.use(cors());
 
+app.enable('trust proxy');
+
 // Setup server port
 let port = process.env.PORT || 9000;
 
