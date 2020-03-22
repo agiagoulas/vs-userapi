@@ -11,8 +11,6 @@ app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.enable('trust proxy');
-
 // Setup server port
 let port = process.env.PORT || 9000;
 
@@ -34,12 +32,6 @@ const users = [
         role: "user"
     }
 ];
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Vary', 'Origin');
-    next();
-});
 
 // Return all users
 app.get('/api/v1/user', function(req, res, next) {
