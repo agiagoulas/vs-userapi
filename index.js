@@ -2,12 +2,14 @@
 // Import modules
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // Setup express framework
 const app = express();
 
 app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(bodyParser.json());
+app.use(cors());
 
 // Setup server port
 let port = process.env.PORT || 9000;
