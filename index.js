@@ -31,12 +31,12 @@ const users = [
 ];
 
 // Return all users
-app.get('/user', function(req, res, next) {
+app.get('/api/v1/user', function(req, res, next) {
     res.json(users);
 });
 
 // Return single user
-app.get('/user/:id', function(req, res, next) {
+app.get('/api/v1/user/:id', function(req, res, next) {
     users.forEach(function(user) {
         if(req.params.id == user.id) {
             res.json(user);
