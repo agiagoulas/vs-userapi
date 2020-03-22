@@ -41,6 +41,7 @@ app.use((req, res, next) => {
 
 // Return all users
 app.get('/api/v1/user', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
     res.json(users);
 });
 
@@ -48,6 +49,7 @@ app.get('/api/v1/user', function(req, res, next) {
 app.get('/api/v1/user/id/:id', function(req, res, next) {
     users.forEach(function(user) {
         if(req.params.id == user.id) {
+            res.header('Access-Control-Allow-Origin', '*');
             res.json(user);
         }
     });
