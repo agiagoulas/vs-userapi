@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Testpage</title>
+        <meta charset="UTF-8">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <script>
+
+            window.onload = function() {
+                let selection = document.getElementById('selection');
+
+                fetch('https://vs-user.eu-gb.mybluemix.net/api/v1/user')
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(function(value, index) {
+                            let option = document.createElement('option');
+                            option.innerHTML = value.user;
+                            option.value = value.user;
+                            selection.appendChild(option);
+                        });
+                    });
+            }
+
+            function getUser() {
+                let user_name = document.getElementById('selection').value;
+
+                fetch('https://vs-user.eu-gb.mybluemix.net/api/v1/user/name/' + user_name)
+                    .then(response => response.json())
+                    .then(data => {
+
+                        let user_id = document.getElementById('user_id');
+                        user_id.value = data.id;
+
+                        let user_name = document.getElementById('user_name');
+                        user_name.value = data.user;
+
+                        let user_role = document.getElementById('user_role');
+                        user_role.value = data.role;
+
+                    });
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <select id="selection"></select> <button onclick="getUser()">Login</button>
+
+        <hr>
+
+        <div>
+            ID: <input type="number" id="user_id" name="user_id" readonly /> <br>
+            Name: <input type="text" id="user_name" name="user_name" readonly /> <br>
+            Rolle: <input type="text" id="user_role" name="user_role" readonly /> <br>
+        </div>
+
+    </body>
+
+</html>

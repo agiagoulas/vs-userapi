@@ -12,7 +12,8 @@
     "url": "git+https://github.com/tobias-schwarz/vs-userapi.git"
   },
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "body-parser": "*"
   },
   "author": "Tobias Schwarz",
   "license": "ISC",
