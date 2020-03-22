@@ -32,7 +32,8 @@ const users = [
 ];
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://vs-user.eu-gb.mybluemix.net/');
+    res.header('Access-Control-Allow-Origin', '*');
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
